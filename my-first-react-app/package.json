@@ -2,11 +2,13 @@
   "name": "my-first-react-app",
   "version": "1.0.0",
   "description": "",
- 
   "scripts": {
-   
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  }
 }

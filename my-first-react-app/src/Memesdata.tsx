@@ -1,7 +1,17 @@
-export default {
-    "success": true,
-    "data": {
-        "memes": [
+
+type Meme = {
+    id: string;
+    name: string;
+    url: string;
+    width: number;
+    height: number;
+    box_count: number;
+};
+
+const Memesdata: Meme[] = 
+   
+  
+        [
             {
                 "id": "181913649",
                 "name": "Drake Hotline Bling",
@@ -803,5 +813,6 @@ export default {
                 "box_count": 2
             }
         ]
-    }
-}
+    
+
+export default Memesdata

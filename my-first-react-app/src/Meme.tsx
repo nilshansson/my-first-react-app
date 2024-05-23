@@ -1,5 +1,5 @@
 import React from "react"
-import memesData from "../memesData.js"
+import memesData from "./Memesdata.tsx"
 
 export default function Meme() {
     const [meme, setMeme] = React.useState({

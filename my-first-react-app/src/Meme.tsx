@@ -10,8 +10,20 @@ export default function Meme() {
 
     const [allMemeImages, setAllMemeImages] = React.useState(memesData)
 
+
+    function handleChange(event: any){
+        const {name, value} = event.target
+        setMeme((prevMeme) => ({
+            ...prevMeme,
+            [name]: value
+        }))
+        
+
+    }
+
+    // dubbelkolla denna functionen memesarray
     function getMemeImage() {
-        const memesArray = allMemeImages.data.memes
+        const memesArray = allMemeImages
         const randomNumber = Math.floor(Math.random() * memesArray.length)
         const url = memesArray[randomNumber].url
         setMeme(prevMeme => ({
@@ -29,11 +41,17 @@ export default function Meme() {
                     type="text"
                     placeholder="Top text"
                     className="form--input"
+                    name="topText"
+                    value={meme.topText}
+                    onChange= {handleChange}
                 />
                 <input 
                     type="text"
                     placeholder="Bottom text"
                     className="form--input"
+                    name="bottomText"
+                    value={meme.bottomText}
+                    onChange= {handleChange}
                 />
                 <button 
                     className="form--button"

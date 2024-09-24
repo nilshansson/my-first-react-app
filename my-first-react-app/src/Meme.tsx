@@ -2,6 +2,8 @@ import React from "react"
 import { useState, useEffect } from "react"
 
 
+
+
 export default function Meme() {
     const [meme, setMeme] = React.useState({
         topText: "",
@@ -9,7 +11,13 @@ export default function Meme() {
         randomImage: "http://i.imgflip.com/1bij.jpg" 
     })
 
-    const [allMemes, setAllMemes]  = useState([])
+    const [allMemes, setAllMemes] = useState([])
+
+    type MemeState = {
+        topText: string
+        bottomText: string
+        randomImage: string
+    }
 
     useEffect(() => {
         fetch("https://api.imgflip.com/get_memes")
@@ -35,10 +43,10 @@ export default function Meme() {
     function getMemeImage() {
     
         const randomNumber = Math.floor(Math.random() * allMemes.length)
-        const url = allMemes[randomNumber].url
+        
         setMeme(prevMeme => ({
             ...prevMeme,
-            randomImage: url
+            randomImage: allMemes[randomNumber].url
         }))
         
     }
